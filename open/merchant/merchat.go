@@ -242,9 +242,9 @@ type CPSDistributorOrderRefundInfo struct {
 }
 
 // 订单列表（游标）
-func Corderlist(Appkey string, signsecret string, accesstoken string, cpsOrderStatus int, pageSize int, beginTime int64, endTime int64) (corlist OrderlistRes, err error) {
+func Corderlist(Appkey string, signsecret string, accesstoken string, cpsOrderStatus int, pageSize int, beginTime int64, endTime int64, pcursor string) (corlist OrderlistRes, err error) {
 	// 构造请求参数 param
-	rawParam := fmt.Sprintf(`{"cpsOrderStatus":%d,"pageSize":%d,"sortType":1,"queryType":1,"beginTime":%d,"endTime":%d}`, cpsOrderStatus, pageSize, beginTime, endTime)
+	rawParam := fmt.Sprintf(`{"cpsOrderStatus":%d,"pageSize":%d,"sortType":1,"queryType":1,"beginTime":%d,"endTime":%d,"pcursor":%s}`, cpsOrderStatus, pageSize, beginTime, endTime, pcursor)
 	// 获取当前时间戳（毫秒级）
 	timestamp := time.Now().UnixNano() / int64(time.Millisecond)
 
