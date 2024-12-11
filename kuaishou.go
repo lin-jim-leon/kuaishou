@@ -33,6 +33,6 @@ func Queryselectiondetail(Appkey string, signsecret string, accesstoken string, 
 }
 
 // 订单列表（游标）
-func Corderlist(Appkey string, signsecret string, accesstoken string, cpsOrderStatus int, pageSize int, beginTime int64, endTime int64) (corlist merchant.OrderlistRes, err error) {
-	return merchant.Corderlist(Appkey, signsecret, accesstoken, cpsOrderStatus, pageSize, beginTime, endTime)
+func Corderlist(Appkey string, signsecret string, accesstoken string, cpsOrderStatus int, pageSize int, beginTime int64, endTime int64, pcursor string) (corlist merchant.OrderlistRes, err error) {
+	return merchant.Corderlist(Appkey, signsecret, accesstoken, cpsOrderStatus, pageSize, beginTime, endTime, pcursor)
 }
