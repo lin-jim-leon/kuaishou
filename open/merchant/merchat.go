@@ -169,7 +169,7 @@ func Queryselectiondetail(Appkey string, signsecret string, accesstoken string, 
 	}
 
 	// 检查是否有错误信息
-	if result.ErrorMsg != "" {
+	if result.ErrorMsg != "SUCCESS" {
 		return SelsetionRes{}, fmt.Errorf("Queryselectiondetail error: %s", result.ErrorMsg)
 	}
 
